@@ -1,0 +1,38 @@
+database:
+  driver: turso_remote
+  endpoint-type: libsql://
+  endpoint: remx-cli-krystian-jarosz.aws-eu-west-1.turso.io
+  token: eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3NTMxNzY0MTYsImlkIjoiMDQ5ZTE2N2MtYjFmNy00YzNmLWEwNzktNmYyNjA5OWQzYjVhIiwicmlkIjoiMmU3N2I3YmQtMDRhOS00ZTE4LWEwMDktMGE2ZWE4NTkzMWY1In0.385q1Kf_qk9Py9-LBOIF8fjYkRB3k58utr--m0PUsL-RiFziDZgFenb1TFhspYpMK8awYJKdJXoauNtimPVICg
+
+project:
+  types:
+    - Fullstack (T3)
+    - Fullstack (Turbo)
+    - Mobile (Expo)
+    - Backend (Golang)
+  variant:
+    fullstack-t3:
+      - CRM
+      - Dashboard (Auth, Login, Register, Dashboard)
+      - Standard (TRPC, No-Auth, DB)
+    fullstack-turbo:
+      - CRM & Mobile App
+      - Dashboard (Auth, Login, Register, Dashboard)
+      - Standard & Mobile App (TRPC, No-Auth, DB)
+    backend-golang:
+      - Application
+      - Web Server
+      - Websocket Server
+  template:
+    fullstack-t3: 
+      crm: https://github.com/
+      dashboard: https://github.com/
+      standard: https://github.com/
+    fullstack-turbo:
+      crm-&-mobile-app: https://github.com/
+      standard-&-mobile-app: https://github.com/
+      dashboard: https://github.com/
+    backend-golang:
+      application: https://github.com/
+      web-server: https://github.com/
+      websocket-server: https://github.com/
