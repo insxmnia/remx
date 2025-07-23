@@ -55,6 +55,7 @@ require (
 	github.com/charmbracelet/bubbletea v1.3.6
 	github.com/coder/websocket v1.8.12 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/eiannone/keyboard v0.0.0-20220611211555-0d226195f203
 	github.com/google/uuid v1.6.0
 	github.com/labstack/echo/v4 v4.13.4
 	github.com/lxi1400/GoTitle v0.0.0-20210314075355-9d4645c96c0e

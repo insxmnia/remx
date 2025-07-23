@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
-	"remx/internal/ui"
 	"runtime"
 )
 
@@ -40,15 +39,6 @@ func Clear() {
 		cmd.Stdout = os.Stdout
 		cmd.Run()
 	}
-}
-
-func GetInput(key string) string {
-	fmt.Print(key)
-	var input string
-	print(ui.Colours["secondary"].ANSII)
-	fmt.Scanln(&input)
-	print(Reset)
-	return input
 }
 
 func ChangeTitle(content string) {

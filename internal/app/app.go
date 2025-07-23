@@ -15,6 +15,6 @@ func Entry() {
 		if screen, ok := screens.Screens["main"]; ok {
 			screen.Show(versions)
 		}
-	}, 100)
+	})
 
 }

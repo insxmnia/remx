@@ -47,7 +47,7 @@ func Banner(versions map[string]string) {
 }
 func ProjectViewFN(s *Screen, args any) {
 	Banner(args.(map[string]string))
-	pname := termc.GetInput(ui.Colours["primary"].Faith.Sprint("What's the project called? "))
+	pname := ui.GetInput(ui.Colours["primary"].Faith.Sprint("What's the project called? "))
 	s.selected["project:name"] = pname
 	ptype, err := selector.Select(ui.UnderlineSprint(ui.Colours["primary"].Faith.Sprint("What project do you want?")), inmemory.CF.Project.Types, selector.Options{
 		ItemSelectedColour: selector.RGB(ui.Colours["item:selected"].RGB),
@@ -145,7 +145,7 @@ func MainViewFN(s *Screen, args any) {
 
 func ServerLoggerFN(s *Screen, args any) {
 	Banner(args.(map[string]string))
-	port := termc.GetInput(ui.Colours["primary"].Faith.Sprint("What port to listen on? "))
+	port := ui.GetInput(ui.Colours["primary"].Faith.Sprint("What port to listen on? "))
 	Banner(args.(map[string]string))
 	server.Run(port)
 }

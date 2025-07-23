@@ -2,6 +2,7 @@ package ui
 
 import (
 	"fmt"
+	"remx/pkg/termc"
 	"remx/pkg/utility"
 	"strings"
 
@@ -102,11 +103,18 @@ func ToRGB(r, g, b int) RGB {
 	}
 }
 
-func InLoop(fn func(), amount int) {
-	for i := range amount {
-		if i == 999999999999 {
-			break
-		}
+func InLoop(fn func()) {
+
+	for {
 		fn()
 	}
+}
+
+func GetInput(key string) string {
+	fmt.Print(key)
+	var input string
+	print(Colours["secondary"].ANSII)
+	fmt.Scanln(&input)
+	print(termc.Reset)
+	return input
 }
