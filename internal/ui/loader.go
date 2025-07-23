@@ -9,6 +9,7 @@ import (
 var s = spinner.New(spinner.CharSets[14], 100*time.Millisecond)
 
 func WithSpinner(callback func(), message string) {
+	s.Color("yellow", "bold")
 	s.Prefix = message
 	s.Start()
 	callback()

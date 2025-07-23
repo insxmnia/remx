@@ -50,3 +50,13 @@ func GetInput(key string) string {
 	print(Reset)
 	return input
 }
+
+func ChangeTitle(content string) {
+	switch runtime.GOOS {
+	case "windows":
+		cmd := exec.Command("title", content)
+		cmd.Run()
+	default:
+		fmt.Printf("\033]2;%s\007", content)
+	}
+}

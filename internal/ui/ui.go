@@ -101,3 +101,12 @@ func ToRGB(r, g, b int) RGB {
 		R: r, G: g, B: b,
 	}
 }
+
+func InLoop(fn func(), amount int) {
+	for i := range amount {
+		if i == 999999999999 {
+			break
+		}
+		fn()
+	}
+}
