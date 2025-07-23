@@ -57,3 +57,7 @@ func JSONToBytes(obj JSON) []byte {
 func GenerateUUID() string {
 	return fmt.Sprintf("%s-%s-%s", GenerateString(8, false), GenerateString(4, false), GenerateString(8, false))
 }
+
+func RGBToHex(r, g, b int) string {
+	return fmt.Sprintf("#%02x%02x%02x", r, g, b)
+}

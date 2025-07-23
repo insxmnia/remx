@@ -2,6 +2,8 @@ package selector
 
 import (
 	"fmt"
+	"remx/internal/ui"
+	"remx/pkg/utility"
 
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
@@ -35,18 +37,17 @@ type styleSet struct {
 	normal   lipgloss.Style
 }
 
-// Select shows a selection list using Bubble Tea and returns the selected item
 func Select(title string, items []string, opts Options) (string, error) {
 	initialModel := model{
 		title:   title,
 		items:   items,
 		options: opts,
 		styles: styleSet{
-			focused: lipgloss.NewStyle().Foreground(lipgloss.Color(rgbToHex(opts.ItemFocusedColour))),
+			focused: lipgloss.NewStyle().Foreground(lipgloss.Color(utility.RGBToHex(opts.ItemFocusedColour.R, opts.ItemFocusedColour.G, opts.ItemFocusedColour.B))),
 			selected: lipgloss.NewStyle().
-				Foreground(lipgloss.Color(rgbToHex(opts.ItemSelectedColour))).
+				Foreground(lipgloss.Color(utility.RGBToHex(opts.ItemSelectedColour.R, opts.ItemSelectedColour.G, opts.ItemSelectedColour.B))).
 				Bold(true),
-			normal: lipgloss.NewStyle(),
+			normal: lipgloss.NewStyle().Foreground(lipgloss.Color(ui.Colours["item:normal"].Hex)),
 		},
 	}
 
@@ -95,7 +96,7 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 func (m model) View() string {
 	if m.selected {
-		return fmt.Sprintf("%s: %s\n", m.title, m.styles.selected.Render(m.choice))
+		return fmt.Sprintf("%s %s\n", m.title, m.styles.selected.Render(m.choice))
 	}
 
 	s := m.title + "\n"
@@ -111,9 +112,4 @@ func (m model) View() string {
 		s += fmt.Sprintf("%s%s\n", cursor, style.Render(item))
 	}
 	return s
-}
-
-// Converts RGB to hex string
-func rgbToHex(rgb RGB) string {
-	return fmt.Sprintf("#%02x%02x%02x", rgb.R, rgb.G, rgb.B)
 }

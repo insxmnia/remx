@@ -13,3 +13,35 @@ const (
 `
 	Seperator = "----------------------------------------------------------"
 )
+
+var BannerAnimationFrames = []string{
+	"Application Loading [     ]",
+	"Application Loading [.    ]",
+	"Application Loading [..   ]",
+	"Application Loading [...  ]",
+	"Application Loading [.... ]",
+	"Application Loading [.....]",
+	"Application Loading [-....]",
+	"Application Loading [--...]",
+	"Application Loading [---..]",
+	"Application Loading [----.]",
+	"Application Loading [-----]",
+	"Application Loading [#----]",
+	"Application Loading [##---]",
+	"Application Loading [###--]",
+	"Application Loading [####-]",
+	"Application Loading [#####]",
+	"Application Loading [####-]",
+	"Application Loading [###--]",
+	"Application Loading [##---]",
+	"Application Loading [#----]",
+	"Application Loading [-----]",
+	"Application Loading [.----]",
+	"Application Loading [..---]",
+	"Application Loading [...--]",
+	"Application Loading [....-]",
+	"Application Loading [.....]",
+	"Application Loading [.. ..]",
+	"Application Loading [.   .]",
+	"Application Loading [     ]",
+}
