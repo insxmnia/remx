@@ -1,0 +1,22 @@
+database:
+  driver: driver-type
+  endpoint-type: endpoint-type # The type of the endpoint (e.g. file:, libsql://,  http://)
+  endpoint: the-endpoint-to-database
+  token: authentication-token-if-needed
+  
+project:
+  types:
+   - type-1
+   - type-2
+  variant:
+    type-1:
+     - project-1
+     - project-2
+    type-2:
+     - project-1
+     - project-2
+  templates:
+    type-1:
+      project-1: github-url
+    type-2:
+      project-2: github-url
